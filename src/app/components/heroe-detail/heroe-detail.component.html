@@ -1,0 +1,31 @@
+<h1 class="animated fadeIn"> {{heroe.nombre | uppercase}} <small> ({{ heroe.aparicion| date:'y' }})</small> </h1>
+
+<div class="row animated fadeIn fast">
+    <div class="col-4">
+        <img [src]="heroe.img"  class="img-fluid rounded"  [alt]="heroe.nombre">
+        <br><br>
+         <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block">Regresar</a>
+    </div>
+    <div class="col-8">
+
+        <h3>{{ heroe.nombre}}</h3>
+        <hr>
+        <br>
+        <p class="lead">{{ heroe.bio}} </p>
+        <!-- Mediante codebehind -->
+            <!-- <div *ngIf="DC" >
+                <img  src="assets/img/dc-logo-3.jpg" class="rounded img-thumbnail img-logo"   alt="dc-logo" >                
+            </div>
+            <div *ngIf="!DC" >
+                <img  src="assets/img/marvel-logo-3.jpg" class="rounded img-thumbnail img-logo" alt="marvel-logo" >                
+           </div> -->
+
+           <!-- Mediante html solo -->
+           <div>
+                <img *ngIf=" (heroe.casa == 'DC') "     src="assets/img/dc-logo-3.jpg"       class="rounded img-thumbnail img-logo"   alt="dc-logo" >
+                <img *ngIf=" (heroe.casa == 'Marvel') " src="assets/img/marvel-logo-3.jpg"   class="rounded img-thumbnail img-logo"   alt="marvel-logo" >
+           </div>
+          
+    </div>
+    <!-- <div class="col"></div> -->
+</div>
