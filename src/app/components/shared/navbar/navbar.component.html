@@ -43,8 +43,8 @@
       </ul>
       
       <form class="form-inline my-2 my-lg-0">
-        <input    class="form-control mr-sm-2" type="text" placeholder="Buscar héroe min 3 letras"   #buscarTexto><!-- (keyup.enter)="buscarHeroe(buscarTexto.value)" no funciona-->
-        <button (click)=(buscarHeroe(buscarTexto.value))  class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar..</button>
+        <input    class="form-control mr-sm-2" type="text" placeholder="Buscar héroe min 3 letras"   #buscarTexto  (keyup)="buscarHeroe(buscarTexto.value)"  ><!-- (keyup)="buscarHeroe(buscarTexto.value)" no funciona-->
+        <button (click)="(buscarHeroe(buscarTexto.value))"    class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar..</button>
       </form>
 
     </div>
