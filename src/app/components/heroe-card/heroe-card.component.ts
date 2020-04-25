@@ -1,6 +1,7 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router'
-//import { HeroesService,Heroe } from '../../services/heroes.service';
+import { HeroesService,Heroe } from '../../services/heroes.service';
+import { ActivatedRoute} from '@angular/router'
 
 
 @Component({
@@ -15,17 +16,38 @@ export class HeroeCardComponent implements OnInit {
 @Input()  heroe:any={};  // coloca [heroe] en componente padre para recibir data
 @Input()  index:number;
 
-  constructor( private  _router:Router) { }
+@Output() heroeSeleccionado: EventEmitter<number>;
+
+  constructor( private  _router:Router,
+               private _heroeService:HeroesService, //sólo si usas verHeroDetail
+               ) { 
+            this.heroeSeleccionado= new EventEmitter();
+               }
 
   ngOnInit(): void {
 
 
   }
 
-  
-  verHeroe(){
-    console.log(this.index);
-       this._router.navigate(['heroe',this.index]);
+  //con @output, para ver cómo funciona
+  //la forma de envia data al componete padre
+  verHeroeEvent(){    
+    //  console.log(this.index);
+     this._router.navigate(['heroe',this.index]);
+    //this.heroeSeleccionado.emit( this.index);
+    //console.log("evento emitido desde el hijo");
   }
+
+
+
+  //otra forma con imports pero con más código
+  verHeroDetail( nombre:string   ){
+        
+    console.log(nombre);
+    let  idx:number  =  this._heroeService.getHeroeId(nombre);
+    console.log(idx);
+    this._router.navigate(['heroe',  idx  ]);
+   
+}
 
 }

@@ -4,8 +4,16 @@
     
 
     <!-- btn-block -->
-    
-    <app-heroe-card [heroe]="myhero" [index]="i" *ngFor="let myhero of heroes, let i=index"></app-heroe-card>
+    <!-- (heroeSeleccionado)="verHeroe( $event )" recibe $event del componente hijo
+    [heroe]="myhero"  [index]="i"  manda a componentes hijos 
+  
+  -->
+    <app-heroe-card   
+           (heroeSeleccionado)="verHeroe( $event )" 
+           [heroe]="myhero"  [index]="i"  
+           *ngFor="let myhero of heroes, let i=index"> </app-heroe-card>
+
+
     
 
   </div>

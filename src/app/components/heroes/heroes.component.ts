@@ -26,9 +26,12 @@ export class HeroesComponent implements OnInit {
     console.log(this.heroes);
   }
 
-  // verHeroe(idx:number){
-  //   console.log(idx);
-  //       this._router.navigate(['heroe',idx]);
-  // }
+  verHeroe(idx:number){
+       // console.log("evento output recibido por componente padre");
+        // console.log(idx);
+        this._router.navigate(['heroe',idx]);
+
+        //desde search component
+  }
 
 }
