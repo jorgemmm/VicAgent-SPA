@@ -1,19 +1,36 @@
-<h1>Héroes de  <small>marvel y DC</small> </h1>
 
-<div class="card-columns">
+<!-- <h1>Héroes de  <small>marvel y DC</small> </h1>
+
+<div class="card-columns" >
     
 
-    <!-- btn-block -->
+    btn-block -->
     <!-- (heroeSeleccionado)="verHeroe( $event )" recibe $event del componente hijo
     [heroe]="myhero"  [index]="i"  manda a componentes hijos 
   
-  -->
+  
     <app-heroe-card   
            (heroeSeleccionado)="verHeroe( $event )" 
-           [heroe]="myhero"  [index]="i"  
-           *ngFor="let myhero of heroes, let i=index"> </app-heroe-card>
+           [heroe]="hero"  [index]="i"  
+           *ngFor="let hero of heroes, let i=index"> 
+          </app-heroe-card>
 
 
-    
+         
+
+  </div>-->
+
+  
+  <h1>Videojuegos de  <small>VicAgent</small> </h1>
+  <div class="card-columns" >
+
+  <app-game-card [item]="game" 
+        
+        (gameSeleccionado)="verGame( $event )" 
+        [index]="i"
+        *ngFor="let game of games, let i=index">
+        
+      </app-game-card>
+
 
   </div>

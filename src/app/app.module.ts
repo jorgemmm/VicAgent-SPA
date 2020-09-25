@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 
 //Servicios
 import { HeroesService }  from './services/heroes.service';
-
+import { GamesService } from './services/games.service';
 
 //Rutas
 import { AppRoutingModule } from  './app-routing.module';
@@ -20,7 +20,14 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { HeroeDetailComponent } from './components/heroe-detail/heroe-detail.component';
 import { SearchComponent } from './components/search/search.component';
-import { HeroeCardComponent } from './components/heroe-card/heroe-card.component'
+import { HeroeCardComponent } from './components/cards/heroe-card/heroe-card.component';
+import { GameCardComponent } from './components/cards/game-card/game-card.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -32,14 +39,19 @@ import { HeroeCardComponent } from './components/heroe-card/heroe-card.component
     FooterComponent,
     HeroeDetailComponent,
     SearchComponent,
-    HeroeCardComponent
+    HeroeCardComponent,
+    GameCardComponent,
+    PrivacyComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [
-    HeroesService
+    HeroesService,   
+    GamesService
+   
 
   ],
   bootstrap: [AppComponent]

@@ -1,0 +1,19 @@
+<div class="card animated fadeIn fast" >
+    <img [src]="item.img" class="card-img-top" alt="...">
+     
+      <div class="card-body" >
+                
+          <h5 class="card-title">{{ item.nombre}}</h5>
+          <p class="card-text">  {{ item.description}}</p>         
+          <!-- <p class="card-text"><small class="text-muted">{{game}}</small></p>    -->
+         
+          <button 
+          
+          (click)="verGameEvent()"
+         
+          type="button" class="btn btn-outline-primary btn-block"> Ver más..</button>   
+      </div>
+
+
+     
+  </div>

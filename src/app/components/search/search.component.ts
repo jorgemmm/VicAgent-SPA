@@ -10,7 +10,8 @@ import { Router } from '@angular/router'
 })
 export class SearchComponent implements OnInit {
 
-  heroes:any={};
+  heroes:Heroe[]=[];
+  her:any={};
   termino:string;
  
 
