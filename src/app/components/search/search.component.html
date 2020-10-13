@@ -1,6 +1,38 @@
-<h1>Searching: <small>  {{ termino}}</small> </h1>
+<h1>Searching: <small>  {{ termino}} </small> </h1>
 
 
+
+
+<div class="row" *ngIf="games.length==0">
+  <div class="col">
+    <div class="alert alert-info">
+      No existen resultados con el termino: {{ termino }}
+
+    </div>
+  </div>
+</div>
+
+<div class="card-columns">
+ 
+  <app-game-card 
+                 
+                
+                [item]="game" 
+                [index]="game.idx"
+                
+                *ngFor="let game of games, let i=index">
+             
+              </app-game-card>
+  
+
+
+
+  </div>
+
+
+<!-- 
+
+  (gameSeleccionado) ="verGame( $event )"
 
 <div class="row" *ngIf="heroes.length==0">
   <div class="col">
@@ -12,7 +44,7 @@
 </div>
 
 <div class="card-columns">
-  <!-- [index]="myhero.idx" -->
+ 
   <app-heroe-card 
                  
                 (heroeSeleccionado)="verHeroe( $event )"
@@ -25,9 +57,11 @@
 
 
 
-  </div> 
+  </div>  -->
   
   
+  
+
   
   <!-- btn-block -->
   <!-- <div class="card animated fadeIn fast" *ngFor="let heroe of heroes, let i=index">

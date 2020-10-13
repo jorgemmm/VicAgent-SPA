@@ -21,6 +21,15 @@ export class NavbarComponent implements OnInit {
     this._router.navigate(['/search',termino]);
     
   }
+
+  onSearchGame(termino:string){
+    //  en heroe services
+    console.log(termino);
+    if(termino.length<=2) return;
+    this._router.navigate(['/search',termino]);
+    
+  }
+
   
 
 }

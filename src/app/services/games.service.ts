@@ -11,6 +11,7 @@ export class GamesService {
 
   private games:Game[]=[
     {
+     
       nombre: "The Horde",
       category:"Survival Shooter Horror",
       platform:"ANDROID",
@@ -18,7 +19,9 @@ export class GamesService {
       img: "assets/img/horde_512.png",
       itchiurl:"https://vicagent.itch.io/the-horde",
       marketurl:"https://play.google.com/store/apps/details?id=com.VicAgent.TheHorde",
-      price: "2"
+      price: "0",
+      estado: "shipped"
+      
       
     },
     {
@@ -29,7 +32,9 @@ export class GamesService {
       img: "assets/img/mistic_512.png",
       itchiurl:"https://vicagent.itch.io",
       marketurl:"https://play.google.com/store/apps/details?id=com.VicAgent.MiscticEndlessRunner",
-      price: "50"
+      price: "0",
+      estado: "deployed"
+      
     },
     {
       nombre: "The world Of Black Tyger",
@@ -37,9 +42,10 @@ export class GamesService {
       platform:"PC",
       description: "Just insert coin (Down load ) and unleashed the unslaved Sage... Shoot and hit the goblins horde or go stealth",
       img: "assets/img/wobt_512.png",
-      itchiurl:"https://vicagent.itch.io/clearchernobil",
+      itchiurl:"https://vicagent.itch.io/the-world-of-black-tyger",
       marketurl:"",
-      price: "2"
+      price: "2",
+      estado: "shipped"
      
     },
     {
@@ -50,7 +56,9 @@ export class GamesService {
       img: "assets/img/cc_512.png",
       itchiurl:"https://vicagent.itch.io/clearchernobil",
       marketurl:"",
-      price: "8.95"
+      price: "8.95",
+      estado: "dev"
+     
      
     },
     
@@ -62,7 +70,8 @@ export class GamesService {
       img: "assets/img/SS_512.png",
       itchiurl:"https://vicagent.itch.io/simpleshooter",
       marketurl:"",
-      price: "2"
+      price: "2",
+      estado: "demo"
      
     },
 
@@ -74,14 +83,40 @@ export class GamesService {
       img: "assets/img/TTJ_512.png",
       itchiurl:"https://vicagent.itch.io/jackal",
       marketurl:"",
-      price: "2"
+      price: "2",
+      estado: "demo"
      
-    }
+     
+    },
+
+    { 
+    nombre: "Mail Order Monster",     
+    category:"Estrategia",
+    platform:"PC, Mobile",
+    description: "Mail order your monster and unleash in the arena with the other monsters ",
+    img: "assets/img/MOM_512.png",
+    itchiurl:"https://vicagent.itch.io/jackal",
+    marketurl:"",
+    price: "2",
+    estado: "demo"
+  }
+   
 
 
 
   ];
   
+
+bIsPrivacyAcepted:boolean;
+
+//Lama a esta función antes de nada para colocar el Id según array
+public SetAllId(){
+  let i:number=0;
+  for (let game of this.games){
+    game.idx=i;
+    i++;
+  }
+}
 
   public getGames():Game[]{
     return this.games;
@@ -90,9 +125,12 @@ export class GamesService {
   public getGame(idx:string ){
     return this.games[idx];
   }
+  
 
 
-  public geGameById(GameName:string):number{
+  
+
+  public geGameByString(GameName:string):number{
        
     GameName=GameName.toLowerCase();
    let i:number=0;
@@ -162,6 +200,7 @@ export interface Game{
   price?:string;
   itchiurl:string;
   marketurl?:string;
-  otherurl?:string; 
+  otherurl?:string;
+  estado?: string; //Published; Dev; Demo-Twitch.TV
   idx?:number;
 }
