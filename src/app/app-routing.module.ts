@@ -40,15 +40,18 @@ const APP_ROUTES: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'heroes', component: HeroesComponent },
+  
   { path: 'games', component: HeroesComponent },
+
+  // { path: 'games', component: GamesComponent },
 
   { path: 'heroe/:id', component: HeroeDetailComponent },
   { path: 'game/:id', component: HeroeDetailComponent },
 
   { path: 'search/:termino', component: SearchComponent },
 
-  { path: '**', component: HeroesComponent },
- // { path: '**', component: HomeComponent },
+ // { path: '**', component: HeroesComponent },
+  { path: '**', component: HomeComponent },
 
 ];
 

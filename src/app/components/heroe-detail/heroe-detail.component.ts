@@ -54,12 +54,12 @@ export class HeroeDetailComponent implements OnInit {
               //console.log(params_in['IDX']); // no existe este parámetro, dará error undefined
               console.log(params_in['id']); //{ path: 'heroe/:id', component: HeroeDetailComponent }, buscamos id parameter en la ruta
 
-              this.heroe = this._heroeService.getHeroe(params_in['id']);
+              //this.heroe = this._heroeService.getHeroe(params_in['id']);
 
-              console.log(this.heroe);
+              //console.log(this.heroe);
 
-              console.log(this.heroe.casa);
-              console.log(CASA_MARVEL);
+              //console.log(this.heroe.casa);
+              //console.log(CASA_MARVEL);
 
               // if(this.heroe.casa==CASA_MARVEL){
               //      this.DC=false;

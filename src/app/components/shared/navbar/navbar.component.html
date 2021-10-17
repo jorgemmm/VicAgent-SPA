@@ -1,16 +1,42 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-faded">
-    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
   
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+   
+    
+    <div class="btn btn-primary navbar-toggler"  data-toggle="collapse"  data-target="#navbarNav"               
+              
+              
+              >
+
+      <span class="navbar-toggler-icon"
+      >
+      </span>
+      <img src="assets/img/vic_avatar3.ico" width="40" height="40" alt="" class="img-thumbnail">
+
+    </div>
+   
+    <!-- 
+      type="button"
+              aria-controls="navbarSupportedContent" 
+              aria-expanded="false" 
+              aria-label="Toggle navigation"
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+                        aria-controls="navbarSupportedContent" 
+                        aria-expanded="false" 
+                        aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+  
+    <div class="collapse navbar-collapse" id="navbarNav">
+      
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-            <a class="navbar-brand" href="#">
+      
+     <li class="nav-item active">
+         <a class="navbar-brand" href="#">
                <img src="assets/img/vic_avatar3.ico" width="40" height="40" alt="" class="img-thumbnail">
                 
-                <!-- <img src="assets/img/A-64.png" width="30" height="30" alt=""> -->
+                <!-- <img src="assets/img/A-64.png" width="30" height="30" alt="">  -->
               </a>
         </li>
 
@@ -47,8 +73,8 @@
       </ul>
       
       <form class="form-inline my-2 my-lg-0">
-        <input    class="form-control mr-sm-2" type="text" placeholder="Buscar Juego min 3 letras"   #buscarTexto  (keyup)="buscarHeroe(buscarTexto.value)"  ><!-- (keyup)="buscarHeroe(buscarTexto.value)" no funciona-->
-        <button (click)="(buscarHeroe(buscarTexto.value))"    class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar..</button>
+        <input    class="form-control mr-sm-2" type="text" placeholder="Buscar Juego min 3 letras"   #buscarTexto  (keyup)="onSearchGame(buscarTexto.value)"  ><!-- (keyup)="buscarHeroe(buscarTexto.value)" no funciona-->
+        <!-- <button  (click)="(buscarHeroe(buscarTexto.value))"    class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar Juego..</button> -->
       </form>
 
     </div>

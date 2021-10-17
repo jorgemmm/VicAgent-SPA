@@ -35,7 +35,7 @@ export class HeroeCardComponent  {
   //con @output, para ver cómo funciona
   //la forma de envia data al componete padre
   verGameEvent(){    
-    //  console.log(this.index);
+    console.log(this.index);
      
     
     this._router.navigate(['game',this.index]);

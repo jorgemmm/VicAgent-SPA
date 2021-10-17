@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
-import { HeroesService,Heroe } from '../../services/heroes.service';
+import { HeroesService, Heroe } from '../../services/heroes.service';
+import { GamesService, Game }  from '../../services/games.service';
 import { ActivatedRoute} from '@angular/router'
 import { Router } from '@angular/router'
 
@@ -10,28 +11,39 @@ import { Router } from '@angular/router'
 })
 export class SearchComponent implements OnInit {
 
-  heroes:Heroe[]=[];
+
+  heroes:Heroe[]=[]; //Debug
+  games:Game[]=[];
+
+
   her:any={};
   termino:string;
  
 
   constructor(private _activateRoute:ActivatedRoute,
-              private _heroeService:HeroesService,
+             // private _heroeService:HeroesService,
+              private _gameService:GamesService,
               private  _router:Router              
                   ) { 
                     
-
+                    //Establecemos Id en todo el array de videojuegos
+                    this._gameService.SetAllId();
+                    
                     this._activateRoute.params.subscribe( params_in =>{
-                      // console.log(params_in);
-                      // console.log(params_in['termino']);
-                     // this.termino=params_in['termino'];
-                      this.heroes=this._heroeService.buscarHeroe(params_in['termino']);
-                      console.log(this.heroes);
+                      // console.log(params_in);console.log(params_in['termino']); this.termino=params_in['termino']; 
+                      
+                      //this.heroes=this._heroeService.buscarHeroe(params_in['termino']); //Debug
+                      //console.log(this.heroes);
+
+                      this.games = this._gameService.buscarGame(params_in['termino']); //Debug
+                     
                     });
 
                     
 
                   }
+
+
 
   ngOnInit(): void {
 
@@ -39,10 +51,12 @@ export class SearchComponent implements OnInit {
 
   }
 
-  verHeroe(idx:number){
+  //verHeroe(idx:number)
+  verGame(idx:number)
+  {
 
-    // console.log(idx);
-    // this._router.navigate(['heroe',idx]);
+     //console.log(idx);
+     //this._router.navigate(['heroe',idx]);
 
     //desde search component
 }

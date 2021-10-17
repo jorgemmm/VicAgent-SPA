@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HeroesService,Heroe } from '../../services/heroes.service';
-import { GamesService, Game } from '../../services/games.service';
+import { HeroesService,Heroe } from 'src/app/services/heroes.service';
+import { GamesService, Game } from 'src/app/services/games.service';
 import { Router } from '@angular/router'
 
 
@@ -27,9 +27,10 @@ export class HeroesComponent implements OnInit {
   ngOnInit(): void {
          // Metdo que se utiliza cuando la page está rendrizada
         //console.log("ngOnInit");
+       
     this.heroes=this._heroesService.getHeroes();
     this.games=this._gamesService.getGames();
-    //console.log(this.heroes);
+   // console.log(this.heroes);
     this.isInProduction=this._gamesService.inProduction;
 
     if(this.isInProduction){
@@ -39,10 +40,11 @@ export class HeroesComponent implements OnInit {
     console.log(this.games);
   }
 
+  //For degug
   verHeroe(idx:number){
        // console.log("evento output recibido por componente padre");
         // console.log(idx);
-        this._router.navigate(['heroe',idx]);
+        this._router.navigate(['heroes',idx]);
 
         //desde search component
   }
@@ -50,7 +52,7 @@ export class HeroesComponent implements OnInit {
   verGame(idx:number){
     // console.log("evento output recibido por componente padre");
      // console.log(idx);
-     this._router.navigate(['game',idx]);
+     this._router.navigate(['games',idx]);
 
      //desde search component
 }
