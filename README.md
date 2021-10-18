@@ -2,7 +2,7 @@
 
 After donload or clone project
 npm install
-nmp start
+npm start
 
 # Spa
 
