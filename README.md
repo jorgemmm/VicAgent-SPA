@@ -1,6 +1,12 @@
+# Getting Starter 
+
+After donload or clone project
+npm install
+nmp start
+
 # Spa
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12+
 
 ## Development server
 
