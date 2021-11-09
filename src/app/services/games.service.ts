@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
+
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 
 
@@ -9,6 +13,7 @@ export class GamesService {
 
   public inProduction:boolean=true; // to load this service or hero seervices
 
+  /**Dock Data Its best practices work in backend data to shared in other project*/
   private games:Game[]=[
     {
      
@@ -99,13 +104,30 @@ export class GamesService {
     marketurl:"",
     price: "2",
     estado: "demo"
-  }
+  },
+
+
    
 
 
 
   ];
-  
+
+  //servergames:Game[];
+
+  constructor(
+    private _http: HttpClient
+   
+     ){ 
+       
+       console.log("servicio games listo para usarse!!!");
+
+
+     }
+
+
+url="https://angular-html-4b67b.firebaseio.com/games";//.json";
+json=".json"; //needed to call Firebase API
 
 bIsPrivacyAcepted:boolean;
 
@@ -118,15 +140,55 @@ public SetAllId(){
   }
 }
 
+
   public getGames():Game[]{
     return this.games;
   }
 
+  //Debug
+getBackendGames():Observable<Game[]>{
+  //const url="https://angular-html-4b67b.firebaseio.com/games.json";
+  //const url ="https://restcountries.com/v2/lang/es";
+  const urldata=`${this.url}${this.json}`;
+
+  //habría que hacer el mínimo de llamadas al servidor
+  //solo llamar cuando esté vació o despues de hacer updates
+
+  return this._http.get<Game[]>(urldata)//(this.url)
+  .pipe(
+    map( (data:Game[]) => {
+      console.log("Request data to server");
+      console.log(data);   
+      
+      //this.servergames=data;    
+     
+      return data;
+   })
+   );
+
+          
+}
+
+
   public getGame(idx:string ){
+    
     return this.games[idx];
+
   }
   
 
+  public getBackendGame(idx:string):Observable<Game>{
+    const urldata=`${this.url}/${idx}${this.json}`;
+    
+    return this._http.get<Game>(urldata).pipe(
+      map( (data:Game)=>{ 
+                console.log(data);
+                return data;
+                     } )
+    )
+           
+
+  }
 
   
 
@@ -150,11 +212,12 @@ public SetAllId(){
 
 
 
+httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 
-  constructor(){ 
-    console.log("servicio games listo para usarse!!!");
-  }
+  
 
 
 

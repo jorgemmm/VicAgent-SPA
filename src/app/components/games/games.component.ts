@@ -1,44 +1,55 @@
 import { Component, OnInit } from '@angular/core';
-import { HeroesService,Heroe } from 'src/app/services/heroes.service';
+//import { HeroesService,Heroe } from 'src/app/services/heroes.service';
 import { GamesService, Game } from 'src/app/services/games.service';
 import { Router } from '@angular/router'
 
 
 @Component({
   selector: 'app-heroes',
-  templateUrl: './heroes.component.html'
+  templateUrl: './games.component.html'
   //styleUrls: ['./heroes.component.css']
 })
-export class HeroesComponent implements OnInit {
+export class GamesComponent implements OnInit {
 
-  heroes:Heroe[]=[];
+ 
   games:Game[]=[];
 
   isInProduction:boolean=false;
 
-  constructor(private _heroesService:HeroesService,
+  constructor(
+            
+            
               private _gamesService:GamesService,
               private  _router:Router
                 ){
-    //  console.log("constructor");     
+    console.log("constructor GameCard");  
+          
 
  }
 
   ngOnInit(): void {
-         // Metdo que se utiliza cuando la page está rendrizada
-        //console.log("ngOnInit");
-    this.heroes=this._heroesService.getHeroes();
-    this.games=this._gamesService.getGames();
-    //console.log(this.heroes);
-    this.isInProduction=this._gamesService.inProduction;
-
-    if(this.isInProduction){
-      //to do to enable or disable meu service to heroe services
-    }
-
-    console.log(this.games);
+    //Método que se utiliza cuando la page está rendrizada
+    console.log("ngOnInit GameCard");
+    
+    
+    this.GetGames(); 
+   
   }
 
+   GetGames(){
+     //this.games=this._gamesService.getGames();
+    this._gamesService.getBackendGames()
+    .subscribe( (data:any) =>{
+      
+      console.log(data);
+      this.games=data
+      //console.log(this.games);
+      
+    
+      
+    });
+   }
+  
   //For degug
   verHeroe(idx:number){
        // console.log("evento output recibido por componente padre");
@@ -49,10 +60,10 @@ export class HeroesComponent implements OnInit {
   }
 
   verGame(idx:number){
-    // console.log("evento output recibido por componente padre");
+    
+    //console.log("evento output recibido por componente padre");
      // console.log(idx);
      this._router.navigate(['games',idx]);
-
      //desde search component
 }
 

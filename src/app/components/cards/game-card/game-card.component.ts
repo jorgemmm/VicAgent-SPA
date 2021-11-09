@@ -40,9 +40,8 @@ export class GameCardComponent {
    verGameEvent(){    
      
       console.log(this.index);
-      // this._router.navigate(['heroe',this.index]);
-      this._router.navigate(['game',this.index]);
-      //this.heroeSeleccionado.emit( this.index);
+      
+      this._router.navigate(['game',this.index]);      
       //console.log("evento emitido desde el hijo");
    }
 

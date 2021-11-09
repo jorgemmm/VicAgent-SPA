@@ -1,0 +1,60 @@
+<BR>
+
+<BR>
+<BR>
+
+
+<div class="row mt-3 text-center animated fadeIn" *ngIf="loading">
+    <div class="col">
+
+        <!-- <i class="fas fa-sync fa-5x fa-spin"></i> -->
+
+        <i class="fas fa-cog fa-3x fa-spin"></i>
+
+        <i class="fas fa-stroopwafel  fa-7x fa-spin"></i>
+
+        <i class="fas fa-cog fa-3x fa-spin"></i>
+
+    </div>
+</div>
+<div class="" *ngIf="!loading">
+
+    <h1 class="mt-10 animated fadeIn "> {{ gameSelected.nombre | uppercase}} <small> ({{ gameSelected.category| uppercase }})</small> </h1>
+
+
+    <div class="row animated fadeIn fast">
+        <div class="col-4">
+            <img [src]="gameSelected.img" class="img-fluid rounded" [alt]="gameSelected.nombre">
+            <br><br>
+            <a [routerLink]="['/games']" class="btn btn-outline-danger btn-block">Regresar</a>
+            <!-- <a target="_blank" [href]="{{ game.itchiurl }}" class="btn btn-outline-danger btn-block" target="_blank" >Regresar</a> -->
+            <!-- target="_blank" href="{{_services.info.facebook}}" -->
+        </div>
+        <div class="col-8">
+
+            <h3>{{ gameSelected.nombre}}</h3>
+            <hr>
+            <br>
+            <p class="lead">{{ gameSelected.description}} </p>
+
+            <p class="lead">{{ gameSelected.estado}} </p>
+            <!-- Mediante codebehind -->
+            <!-- <div *ngIf="DC" >
+                <img  src="assets/img/dc-logo-3.jpg" class="rounded img-thumbnail img-logo"   alt="dc-logo" >                
+            </div>
+            -->
+
+            <!-- Mediante html solo -->
+            <a target="_blank" [href]="[ gameSelected.itchiurl ]" class="btn btn-primary" style="margin: 20px">Test Alpha versión in Itch.io</a>
+            <div class="">
+                <img *ngIf=" (gameSelected.platform == 'PC') " src="assets/img/pc-logo.jpg" height="32" class="rounded img-thumbnail img-logo" alt="pc-logo">
+                <img *ngIf=" (gameSelected.platform != 'PC') " src="assets/img/android-logo.jpg" height="32" class="rounded img-thumbnail img-logo" alt="android-logo">
+            </div>
+
+
+
+        </div>
+        <!-- <div class="col"></div> -->
+    </div>
+
+</div>

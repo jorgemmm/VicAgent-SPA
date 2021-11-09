@@ -1,0 +1,91 @@
+[ {
+  "category" : "Survival Shooter Horror",
+  "description" : "Run And Shot the zombie horde",
+  "estado" : "shipped",
+  "img" : "assets/img/horde_512.png",
+  "itchiurl" : "https://vicagent.itch.io/the-horde",
+  "marketurl" : "https://play.google.com/store/apps/details?id=com.VicAgent.TheHorde",
+  "nombre" : "The Horde",
+  "platform" : "ANDROID",
+  "price" : "0"
+}, {
+  "category" : "Arcade",
+  "description" : "Mistic must run nonstop, avoid and jump obstacles, and don´t forget collect PowerUps that will help her.",
+  "estado" : "deployed",
+  "img" : "assets/img/mistic_512.png",
+  "itchiurl" : "https://vicagent.itch.io",
+  "marketurl" : "https://play.google.com/store/apps/details?id=com.VicAgent.MiscticEndlessRunner",
+  "nombre" : "Mistic EndLess runner",
+  "platform" : "ANDROID",
+  "price" : "0"
+}, {
+  "category" : "Arcade Shooter",
+  "description" : "Just insert coin (Down load ) and unleashed the unslaved Sage... Shoot and hit the goblins horde or go stealth",
+  "estado" : "shipped",
+  "img" : "assets/img/wobt_512.png",
+  "itchiurl" : "https://vicagent.itch.io/the-world-of-black-tyger",
+  "marketurl" : "",
+  "nombre" : "The world Of Black Tyger",
+  "platform" : "PC",
+  "price" : "2"
+}, {
+  "category" : "Survival Shooter Horror, Aventura, RPG",
+  "description" : "Collect Fauna, kill the Mutants creature while trying Fix the Reactor",
+  "estado" : "dev",
+  "img" : "assets/img/cc_512.png",
+  "itchiurl" : "https://vicagent.itch.io/clearchernobil",
+  "marketurl" : "",
+  "nombre" : "ClearChernobil",
+  "platform" : "PC",
+  "price" : "8.95"
+}, {
+  "category" : "Shooter one person, Survival Shooter",
+  "description" : "Survive ",
+  "estado" : "demo",
+  "img" : "assets/img/SS_512.png",
+  "itchiurl" : "https://vicagent.itch.io/simpleshooter",
+  "marketurl" : "",
+  "nombre" : "SimpleShooter",
+  "platform" : "PC",
+  "price" : "2"
+}, {
+  "category" : "Action, Tanks, Aventura",
+  "description" : "Rescue Missing in Combat, destroy all Turrets and tanks, Upgrade your Tank",
+  "estado" : "demo",
+  "img" : "assets/img/TTJ_512.png",
+  "itchiurl" : "https://vicagent.itch.io/jackal",
+  "marketurl" : "",
+  "nombre" : "ToonTanks_Jackal",
+  "platform" : "PC, Mobile",
+  "price" : "2"
+}, {
+  "category" : "Estrategia",
+  "description" : "Mail order your monster and unleash in the arena with the other monsters ",
+  "estado" : "demo",
+  "img" : "assets/img/MOM_512.png",
+  "itchiurl" : "https://vicagent.itch.io/jackal",
+  "marketurl" : "",
+  "nombre" : "Mail Order Monster",
+  "platform" : "PC, Mobile",
+  "price" : "2"
+}, {
+  "category" : "Acción Aventura",
+  "description" : "Destroy all nest, then kill all creature in time, but you only have large shot",
+  "estado" : "shipped",
+  "img" : "assets/img/long_512.png",
+  "itchiurl" : "https://vicagent.itch.io/longshot",
+  "marketurl" : "",
+  "nombre" : "LongShot",
+  "platform" : "PC",
+  "price" : "2"
+}, {
+  "category" : "Acción Aventura",
+  "description" : "Destroy all Building before gas expire, kill all little enemy with the pilot",
+  "estado" : "shipped",
+  "img" : "assets/img/long_512.png",
+  "itchiurl" : "https://vicagent.itch.io/longshot",
+  "marketurl" : "",
+  "nombre" : "Mecha Destruction",
+  "platform" : "PC",
+  "price" : "2"
+} ]
